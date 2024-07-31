@@ -1,0 +1,62 @@
+@import '../styles/variables.less';
+
+// :host {
+//   display: flex;
+//   text-rendering: optimizeLegibility;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+nz-header {
+  background: #fff;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 10px 30px 0 #523f6914;
+}
+
+nz-sider {
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  z-index: 2;
+}
+
+.header-content-layout {
+  margin-left: @side-nav-unfold-width;
+  &.collapsed {
+    margin-left: @side-nav-fold-width;
+  }
+}
+
+::ng-deep .ant-spin-nested-loading {
+  & > div > .ant-spin {
+    max-height: calc(100vh - @layout-header-height - 0px * 2);
+  }
+}
+
+nz-content {
+  margin-top: 64px;
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+.inner-content {
+  min-height: calc(100vh - @layout-header-height - 0px * 2);
+  padding: @padding-md;
+}

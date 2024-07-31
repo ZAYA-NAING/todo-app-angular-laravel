@@ -1,0 +1,20 @@
+@import '../styles/variables';
+
+[nz-button] {
+  margin-right: 8px;
+}
+
+each(@todo-status-colors, {
+  .todo-status-col {
+    span {
+      &[title=@{key}] {
+        .base-status-tag();
+        padding: 2px 4px;
+        display: block;
+        width: 130px;
+        background-color: @value;
+      }
+    }
+  }
+
+});

@@ -1,0 +1,22 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <app-side-menu [isCollapsed]="isCollapsed"></app-side-menu>
+  </nz-sider>
+  <nz-layout [class.collapsed]="isCollapsed" class="header-content-layout">
+    <nz-header>
+      <i
+        class="trigger"
+        nz-icon
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"
+      ></i>
+    </nz-header>
+    <nz-spin [nzSize]="'large'" [nzSpinning]="isSpinning$ | async">
+      <nz-content>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+    </nz-spin>
+  </nz-layout>
+</nz-layout>

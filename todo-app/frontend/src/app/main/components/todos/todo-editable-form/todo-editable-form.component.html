@@ -1,0 +1,42 @@
+<form nz-form [formGroup]="form">
+  <nz-form-item>
+    <nz-form-label [nzSm]="4" nzFor="todo_status_id" nzRequired
+      >Status</nz-form-label
+    >
+    <nz-form-control [nzSm]="24">
+      <nz-select
+        id="todo_status_id"
+        nzPlaceHolder="Select a status"
+        nzAllowClear="true"
+        formControlName="todo_status_id"
+        [nzDropdownClassName]="'todo-status-select'"
+      >
+        <ng-container *ngFor="let todoStatus of todoStatuses">
+          <nz-option [nzValue]="todoStatus.id" [nzLabel]="todoStatus.name">
+          </nz-option>
+        </ng-container>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzRequired [nzSm]="4">Title</nz-form-label>
+    <nz-form-control [nzSm]="24">
+      <input
+        nz-input
+        placeholder="e.g: Study javascript"
+        formControlName="title"
+      />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="4">Note</nz-form-label>
+    <nz-form-control [nzSm]="24">
+      <textarea
+        nz-input
+        rows="2"
+        placeholder="Write note"
+        formControlName="note"
+      ></textarea>
+    </nz-form-control>
+  </nz-form-item>
+</form>
