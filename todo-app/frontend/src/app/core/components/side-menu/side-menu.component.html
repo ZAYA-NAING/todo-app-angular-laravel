@@ -1,0 +1,13 @@
+<div class="logo"></div>
+<ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+  <li
+    nz-menu-item
+    *ngFor="let item of menuItems"
+    [routerLink]="item?.path"
+    [routerLinkActive]="'ant-menu-item-selected'"
+    [routerLinkActiveOptions]="{ exact: false }"
+  >
+    <i nz-icon [nzType]="item?.data?.icon"></i>
+    <span>{{ item?.data?.title }}</span>
+  </li>
+</ul>

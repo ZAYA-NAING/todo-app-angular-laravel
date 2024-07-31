@@ -1,0 +1,14 @@
+.todo-status-select {
+  nz-option-item {
+    .ant-select-item-option-content {
+      .base-status-tag();
+    }
+    each(@todo-status-colors, {
+      &[title='@{key}'] {
+        .ant-select-item-option-content {
+          background-color: @value;
+        }
+      }
+    });
+  }
+}

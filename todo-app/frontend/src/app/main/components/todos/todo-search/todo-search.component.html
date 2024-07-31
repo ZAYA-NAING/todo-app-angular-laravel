@@ -1,0 +1,47 @@
+<nz-collapse>
+  <nz-collapse-panel nzHeader="Filter" nzActive="true">
+    <form nz-form [formGroup]="form">
+      <div nz-row [nzGutter]="24">
+        <div nz-col>
+          <nz-form-item>
+            <nz-form-label nzFor="todo_status_id">Status</nz-form-label>
+            <nz-form-control [nzSpan]="20">
+              <nz-select
+                #select
+                id="todo_status_id"
+                nzPlaceHolder="Select a status"
+                nzAllowClear="true"
+                formControlName="todo_status_id"
+                [nzDropdownClassName]="'todo-status-select'"
+              >
+                <ng-container *ngFor="let todoStatus of todoStatuses">
+                  <nz-option
+                    [nzValue]="todoStatus.id.toString()"
+                    [nzLabel]="todoStatus.name"
+                  >
+                  </nz-option>
+                </ng-container>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col>
+          <nz-form-item>
+            <nz-form-label [nzFor]="'title'">Title</nz-form-label>
+            <nz-form-control>
+              <input nz-input formControlName="title" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      <div nz-row>
+        <div nz-col [nzSpan]="24" class="search-action">
+          <button nz-button [nzType]="'primary'" (click)="onSubmit()">
+            Search
+          </button>
+          <button nz-button (click)="onClear()">Clear</button>
+        </div>
+      </div>
+    </form>
+  </nz-collapse-panel>
+</nz-collapse>

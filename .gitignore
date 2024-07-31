@@ -1,0 +1,54 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+todo-app/backend/public/scripts/
+todo-app/backend/public/assets/
+
+# compiled output
+/dist
+todo-app/frontend/dist
+todo-app/frontend/.anguar/*
+
+/tmp
+/out-tsc
+.phpunit.result.cache
+# Only exists if Bazel was run
+/bazel-out
+
+# dependencies
+/node_modules
+todo-app/backend/vendor
+todo-app/frontend/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+todo-app/frontend/.vscode/*
+todo-app/frontend/.idea
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+.php-version
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Log Files
+todo-app/@deprecated-docker/data/mysql

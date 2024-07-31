@@ -1,0 +1,33 @@
+@import '../styles/variables';
+
+nz-collapse {
+  margin-bottom: 6px;
+}
+
+[nz-form-label] {
+  overflow: visible;
+}
+
+nz-select {
+  &#todo_status_id {
+    min-width: 183px;
+    ::ng-deep .ant-select-selection-item {
+      margin: 3px 18px 3px 0;
+      line-height: 24px;
+      .base-status-tag();
+      each(@todo-status-colors, {
+        &[title=@{key}] {
+          background-color: @value;
+        }
+      });
+    }
+  }
+}
+
+.search-action {
+  text-align: right;
+  button {
+    margin-left: 8px;
+  }
+}
+

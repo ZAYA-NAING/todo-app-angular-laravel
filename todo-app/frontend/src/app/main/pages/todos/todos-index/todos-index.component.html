@@ -1,0 +1,26 @@
+<ng-container *ngIf="(response$ | async)?.data as items">
+  <app-todo-search
+    [search]="activatedRouteQueryParams$ | async"
+    (searchStart)="onSearchStart($event)"
+    (searchClear)="onSearchClear()"
+  >
+  </app-todo-search>
+
+  <div class="actions">
+    <button nz-button nzType="primary" (click)="onShowTodoEditModal()">
+      Add
+    </button>
+    <app-pagination
+      paginationType="page"
+      [paginationInfo]="(response$ | async)?.meta!"
+      (pageIndexChange)="onPageChanged($event)"
+    ></app-pagination>
+  </div>
+
+  <app-todo-list
+    [items]="items"
+    (editTodo)="onShowTodoEditModal($event)"
+    (deleteTodo)="onShowDeleteConfirm($event)"
+  >
+  </app-todo-list>
+</ng-container>

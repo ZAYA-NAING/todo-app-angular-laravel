@@ -1,0 +1,1 @@
+2024/07/30 16:35:26 [alert] 1#1: unlink() "/run/nginx.pid" failed (30: Read-only file system)
